@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
 
-    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
-        <resetJUL>true</resetJUL>
-    </contextListener>
-
-    <!-- To enable JMX Management -->
-    <jmxConfigurator/>
-
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%-5level %logger{0} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-	<!--<logger name="org.hibernate" level="debug"/> -->
-    <logger name="org.springframework.samples.petclinic" level="debug"/>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+	    <layout class="ch.qos.logback.classic.PatternLayout">
+	      <pattern>
+	        %d{HH:mm:ss.SSS} [%thread] %-5level %logger{32} - %msg%n
+	      </pattern>
+	    </layout>
+  	</appender>
+	
+	<!-- 
+	 <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<file>spring4-web.log</file>
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	      	<fileNamePattern>
+	        	spring4-web.%d{yyyy-MM-dd_HH-mm}.log.zip
+	      	</fileNamePattern>
+    	</rollingPolicy>
+	    <layout class="ch.qos.logback.classic.PatternLayout">
+	      <Pattern>
+	        %d{HH:mm:ss,SSS} [%thread] %-5level %logger{32} - %msg%n
+	      </Pattern>
+	    </layout>
+  	</appender>
+	 -->
+	
+	<logger name="org.springframework" level="info"/>	 
+	<logger name="org.hibernate" level="error"/>
+	
+	<logger name="com.inflinx.blog" level="debug"/>
          
     <root level="info">
         <appender-ref ref="console"/>

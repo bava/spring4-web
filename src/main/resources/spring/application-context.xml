@@ -1,0 +1,48 @@
+<beans 	xmlns="http://www.springframework.org/schema/beans" 
+	   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:p="http://www.springframework.org/schema/p" 
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+							http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+							http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+							http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+		
+	<!-- Include any other middle tier related spring config files -->	
+	<!-- <import resource="additional-config.xml"/> -->
+	
+	<!-- Service and Repository Layer Bean Configurations -->
+	<!-- 	
+	<context:component-scan base-package="com.inflinx.spring4.service"/>
+	<context:component-scan base-package="com.inflinx.spring4.repository"/>
+	-->		
+	
+	<!-- If using Spring Data JPA -->	
+	<!-- <jpa:repositories base-package="" />  -->
+	
+		
+	<!-- Enable @Transaction model -->
+	<!-- <tx:annotation-driven />  -->
+	
+	<!-- Get the data source from JNDI -->
+	<!-- <jee:jndi-lookup jndi-name="jdbc.spring4ds" id="datasource" />  -->
+	
+	<!-- Using JPA for ORM 
+		 Make sure that persistence.xml is available in the class path
+	-->
+	<!-- 
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"   
+          p:data-source-ref="dataSource" p:persistence-xml-location="classpath:persistence.xml" p:jpaDialect-ref="jpaDialect">  
+    </bean>  
+    
+    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />  
+    
+     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"   
+          p:entity-manager-factory-ref="entityManagerFactory">  
+     </bean>
+	 -->
+	 	
+</beans>		
