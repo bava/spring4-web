@@ -15,10 +15,6 @@ public class HomeController {
 	{
 		logger.debug("Inside the home page");
 		
-		if(true) {
-			throw new RuntimeException();
-		}
-		
 		return "home";
 	}
 }
